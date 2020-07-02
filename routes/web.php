@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index')->name('home.index');
 //Route::get('/create', 'HomeController@create')->name('pdf.create');
 
+Route::get('/offline', function(){
+      return view('vendor/laravelpwa/offline');
+});
+
 Route::get('pdf', 'PdfController@index')->name('pdf.index');
 Route::get('pdf/{pdf}', 'PdfController@show')->name('pdf.show');
 Route::get('/create','PdfController@create')->name('pdf.create');
