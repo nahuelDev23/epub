@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 Use App\Pdf;
+use Illuminate\Support\Facades\Storage;
 class PdfController extends Controller
 {
     /**
@@ -39,7 +40,9 @@ class PdfController extends Controller
         $pdf->pdf = $request->pdf;
         $pdf->name = $request->name;
         if ($request->hasFile('epub')) {
-            $pdf->pdf = $request->file('epub')->store('uploads', 'public');
+            //$pdf->pdf = $request->file('epub')->store('uploads', 'public');
+            $pdf->pdf = $request->file('epub');
+            $path = Storage::disk('uploads');
         }
         $pdf->save();
         return redirect()->route('pdf.index',$pdf->id)->with('info','Libro guardado con éxito');
