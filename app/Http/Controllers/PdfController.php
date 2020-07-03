@@ -47,8 +47,8 @@ class PdfController extends Controller
         $urlAmazon = Storage::disk('s3')->url($pdf->pdf);
         }
         $pdf->save();
-        return $urlAmazon;
-        //return redirect()->route('pdf.index',$pdf->id)->with('info','Libro guardado con éxito');
+        //return $urlAmazon;
+        return redirect()->route('pdf.index',$pdf->id)->with('info','Libro guardado con éxito');
 
     }
 
