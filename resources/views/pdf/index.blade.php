@@ -13,6 +13,13 @@
                   <tr>
                         <td>{{$libro->name}}</td>
                         <td><a href="{{route('pdf.show',$libro->id)}}">Ver</a></td>
+                        <td>
+                              {!!Form::open(['route' => ['pdf.destroy',$libro->id],
+                                    'method' => 'DELETE']) !!}
+                                    <button class="btn btn-sm btn-danger">Eliminar</button>
+                              {!!Form::close()!!}
+                        </td>
+                        
                   </tr>
                   @endforeach
             </tbody>

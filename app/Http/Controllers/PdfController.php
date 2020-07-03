@@ -60,9 +60,6 @@ class PdfController extends Controller
      */
     public function show(Pdf $pdf)
     {
-        //$pdf = Storage::disk('s3')->response($pdf->pdf);
-        //$pdf = Storage::disk('s3')->url($pdf->pdf);
-        //return  dd($pdf);
         return view('pdf.show', compact('pdf'));
     }
 
@@ -95,8 +92,10 @@ class PdfController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Pdf $pdf)
     {
-        //
+        Storage::disk('s3')->delete($pdf->pdf);
+        $pdf->delete();
+        return back()->with('Libro eliminado con exito');
     }
 }
