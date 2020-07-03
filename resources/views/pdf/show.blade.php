@@ -28,7 +28,7 @@
                               
                         });
                         */
-                        let url = "https://store-epub.s3.sa-east-1.amazonaws.com"+pdf.pdf
+                        let url = "https://store-epub.s3.sa-east-1.amazonaws.com/"+pdf.pdf
                         fetch(url)
                         .then(res => res.blob())
                         .then(blob => {
