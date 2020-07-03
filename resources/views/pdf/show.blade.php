@@ -22,10 +22,22 @@
             document.onreadystatechange = function() {
                   if (document.readyState == "complete") {
                         //const pdf = @json($pdf);
+                        /*
                         window.reader = ePubReader("https://store-epub.s3.sa-east-1.amazonaws.com/uploads/biRSFVf7ryKX2PtAFmmQmyS5Kaen33TIkepFa1IH.epub ", {
                               restore: true,
-                              contained: true
+                              
                         });
+                        */
+                        let url = "https://store-epub.s3.sa-east-1.amazonaws.com/uploads/biRSFVf7ryKX2PtAFmmQmyS5Kaen33TIkepFa1IH.epub"
+                        fetch(url)
+                        .then(res => res.blob())
+                        .then(blob => {
+                              const Book = ePubReader(blob, {
+                              replacements: 'blobUrl',
+                              restore: true,
+                              
+                        });
+                        })
                         //console.log(pdf)
                   }
             };
