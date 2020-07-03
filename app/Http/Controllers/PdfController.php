@@ -41,8 +41,8 @@ class PdfController extends Controller
         $pdf->name = $request->name;
         if ($request->hasFile('epub')) {
             //$pdf->pdf = $request->file('epub')->store('uploads', 'public');
-            $pdf->pdf = $request->file('epub');
-            $path = Storage::disk();
+            $pdf->pdf = $request->file('epub')->store('uploads', 'public');
+            $path = Storage::disk('local');
         }
         $pdf->save();
         return redirect()->route('pdf.index',$pdf->id)->with('info','Libro guardado con éxito');
