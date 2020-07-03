@@ -22,7 +22,7 @@
             document.onreadystatechange = function() {
                   if (document.readyState == "complete") {
                         const pdf = @json($pdf);
-                        window.reader = ePubReader("../storage/"+pdf.pdf, {
+                        window.reader = ePubReader("https://store-epub.s3.sa-east-1.amazonaws.com/"+pdf.pdf, {
                               restore: true
                         });
                         console.log(pdf)

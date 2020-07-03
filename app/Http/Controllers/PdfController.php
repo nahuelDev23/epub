@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 Use App\Pdf;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Http\File;
+use Illuminate\Support\Facades\File;
 class PdfController extends Controller
 {
     /**
@@ -41,12 +41,14 @@ class PdfController extends Controller
         $pdf->pdf = $request->pdf;
         $pdf->name = $request->name;
         if ($request->hasFile('epub')) {
-            //$pdf->pdf = $request->file('epub')->store('uploads', 'public');
-            $pdf->pdf = $request->file('epub')->store('uploads', 'public');
-            $path = Storage::disk('local');
+         $pdf->pdf = $request->file('epub')->store('uploads', 's3');
+        //$path = $request->file('epub')->store('uploads','s3');
+        Storage::disk('s3')->setVisibility($pdf->pdf,'public');
+        $urlAmazon = Storage::disk('s3')->url($pdf->pdf);
         }
         $pdf->save();
-        return redirect()->route('pdf.index',$pdf->id)->with('info','Libro guardado con éxito');
+        return $urlAmazon;
+        //return redirect()->route('pdf.index',$pdf->id)->with('info','Libro guardado con éxito');
 
     }
 
@@ -58,6 +60,9 @@ class PdfController extends Controller
      */
     public function show(Pdf $pdf)
     {
+        //$pdf = Storage::disk('s3')->response($pdf->pdf);
+        //$pdf = Storage::disk('s3')->url($pdf->pdf);
+        //return  dd($pdf);
         return view('pdf.show', compact('pdf'));
     }
 
