@@ -96,6 +96,6 @@ class PdfController extends Controller
     {
         Storage::disk('s3')->delete($pdf->pdf);
         $pdf->delete();
-        return back()->with('Libro eliminado con exito');
+        return back()->with('info','Libro eliminado con exito');
     }
 }
