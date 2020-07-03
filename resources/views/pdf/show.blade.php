@@ -21,11 +21,12 @@
 
             document.onreadystatechange = function() {
                   if (document.readyState == "complete") {
-                        const pdf = @json($pdf);
+                        //const pdf = @json($pdf);
                         window.reader = ePubReader("https://store-epub.s3.sa-east-1.amazonaws.com/uploads/biRSFVf7ryKX2PtAFmmQmyS5Kaen33TIkepFa1IH.epub ", {
-                              restore: true
+                              restore: true,
+                              contained: true
                         });
-                        console.log(pdf)
+                        //console.log(pdf)
                   }
             };
       </script>
