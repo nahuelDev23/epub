@@ -33,8 +33,9 @@
                         .then(res => res.blob())
                         .then(blob => {
                               const Book = ePubReader(blob, {
-                              replacements: 'blobUrl',
                               restore: true,
+                              replacements: 'blobUrl',
+                              
                               
                         });
                         })
