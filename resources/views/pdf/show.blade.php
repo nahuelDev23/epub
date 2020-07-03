@@ -21,13 +21,14 @@
 
             document.onreadystatechange = function() {
                   if (document.readyState == "complete") {
-                        //const pdf = @json($pdf);
-                        /*
-                        window.reader = ePubReader("https://store-epub.s3.sa-east-1.amazonaws.com/uploads/biRSFVf7ryKX2PtAFmmQmyS5Kaen33TIkepFa1IH.epub ", {
+                        const pdf = @json($pdf);
+                        
+                        window.reader = ePubReader("https://store-epub.s3.sa-east-1.amazonaws.com"+pdf.pdf, {
                               restore: true,
                               
                         });
-                        */
+                        
+                        /*
                         let url = "https://store-epub.s3.sa-east-1.amazonaws.com/uploads/biRSFVf7ryKX2PtAFmmQmyS5Kaen33TIkepFa1IH.epub"
                         fetch(url)
                         .then(res => res.blob())
@@ -39,6 +40,7 @@
                               
                         });
                         })
+                        */
                         //console.log(pdf)
                   }
             };
