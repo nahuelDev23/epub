@@ -20,7 +20,7 @@ Route::get('/offline', function(){
       return view('vendor/laravelpwa/offline');
 });
 
-Route::get('pdf', ['PdfController@index','https' => true])->name('pdf.index');
+Route::get('pdf', 'PdfController@index')->name('pdf.index');
 Route::get('pdf/{pdf}', 'PdfController@show')->name('pdf.show');
 Route::delete('pdf/{pdf}', 'PdfController@destroy')->name('pdf.destroy');
 Route::get('/create','PdfController@create')->name('pdf.create');
