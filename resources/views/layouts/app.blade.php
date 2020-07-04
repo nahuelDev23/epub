@@ -38,8 +38,8 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         
-                        <li class="nav-item"><a class="nav-link" href="{{url('pdf')}}">Nuestros libros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{url('create')}}">Cargar libro</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('pdf.index')}}">Nuestros libros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('pdf.create')}}">Cargar libro</a></li>
                        
                     </ul>
                 </div>
