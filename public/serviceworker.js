@@ -71,5 +71,6 @@ const swScriptUrl = new URL(self.location);
 self.clients.matchAll({includeUncontrolled: true}).then(clients => {
   for (const client of clients) {
     const clientUrl = new URL(client.url);
+    console.log(clientUrl)
   }
 });
