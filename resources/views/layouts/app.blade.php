@@ -19,6 +19,7 @@
 
     <!-- Styles -->
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <base href="https://rocky-chamber-42495.herokuapp.com" />
     @laravelPWA
 </head>
 
