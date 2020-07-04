@@ -8,13 +8,13 @@
       <title>Laravel</title>
       <meta name="apple-mobile-web-app-capable" content="yes">
 
-      <link rel="stylesheet" href="{{asset('reader/css/normalize.css')}}">
-      <link rel="stylesheet" href="{{asset('reader/css/main.css')}}">
-      <link rel="stylesheet" href="{{asset('reader/css/popup.css')}}">
+      <link rel="stylesheet" href="{{secure_asset('reader/css/normalize.css')}}">
+      <link rel="stylesheet" href="{{secure_asset('reader/css/main.css')}}">
+      <link rel="stylesheet" href="{{secure_asset('reader/css/popup.css')}}">
 
-      <script src="{{asset('reader/js/libs/jquery.min.js')}}"></script>
+      <script src="{{secure_asset('reader/js/libs/jquery.min.js')}}"></script>
 
-      <script src="{{asset('reader/js/libs/zip.min.js')}}"></script>
+      <script src="{{secure_asset('reader/js/libs/zip.min.js')}}"></script>
 
       <script>
             "use strict";
@@ -48,13 +48,13 @@
       <!-- <script src="js/libs/localforage.min.js"></script> -->
 
       <!-- Full Screen -->
-      <script src="{{asset('reader/js/libs/screenfull.min.js')}}"></script>
+      <script src="{{secure_asset('reader/js/libs/screenfull.min.js')}}"></script>
 
       <!-- Render -->
-      <script src="{{asset('reader/js/epub.js')}}"></script>
+      <script src="{{secure_asset('reader/js/epub.js')}}"></script>
 
       <!-- Reader -->
-      <script src="{{asset('reader/js/reader.js')}}"></script>
+      <script src="{{secure_asset('reader/js/reader.js')}}"></script>
 
       <!-- Plugins -->
       <!-- <script src="js/plugins/search.js"></script> -->
