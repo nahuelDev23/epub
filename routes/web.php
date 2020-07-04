@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\URL;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 if (env('APP_ENV') === 'production') {
       URL::forceSchema('https');
   }
-  
+
 Route::get('/', 'HomeController@index')->name('home.index');
 //Route::get('/create', 'HomeController@create')->name('pdf.create');
 
