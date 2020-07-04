@@ -69,8 +69,7 @@ const swScriptUrl = new URL(self.location);
 
 // Get URL objects for each client's location.
 self.clients.matchAll({includeUncontrolled: true}).then(clients => {
-  for (const client of clients) {
-    const clientUrl = new URL(client.url);
-    console.log(clientUrl)
-  }
+    for (const client of clients) {
+        updateCache(new URL(client.url).href);
+    }
 });
