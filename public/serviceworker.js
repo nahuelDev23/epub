@@ -70,6 +70,7 @@ const swScriptUrl = new URL(self.location);
 // Get URL objects for each client's location.
 self.clients.matchAll({includeUncontrolled: true}).then(clients => {
     for (const client of clients) {
-        updateCache(new URL(client.url).href);
+        let nuevas = new URL(client.url).href;
+        filesToCache.push(nuevas);
     }
 });
