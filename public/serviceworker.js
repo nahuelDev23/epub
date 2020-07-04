@@ -5,7 +5,7 @@ var filesToCache = [
     '/pdf/1',
     '/css/app.css',
     '/js/app.js',
-    '/reader/*/*.js',
+    '/reader/js/epub.js',
     '/images/icons/icon-72x72.png',
     '/images/icons/icon-96x96.png',
     '/images/icons/icon-128x128.png',
