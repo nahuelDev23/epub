@@ -59,18 +59,22 @@ self.addEventListener("fetch", event => {
             .then(response => {
                 return response || fetch(event.request);
             })
+            .then(function(response) {
+                cache.put(event.request, response.clone());
+                return response;
+              })
             .catch(() => {
                 return caches.match('offline');
             })
     )
 });
 
-const swScriptUrl = new URL(self.location);
+// const swScriptUrl = new URL(self.location);
 
 // Get URL objects for each client's location.
-self.clients.matchAll({includeUncontrolled: true}).then(clients => {
-    for (const client of clients) {
-        let nuevas = new URL(client.url).href;
-        filesToCache.push(nuevas);
-    }
-});
+// self.clients.matchAll({includeUncontrolled: true}).then(clients => {
+//     for (const client of clients) {
+//         let nuevas = new URL(client.url).href;
+//         filesToCache.push(nuevas);
+//     }
+// });
